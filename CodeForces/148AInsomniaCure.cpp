@@ -13,7 +13,6 @@
 #include <queue>
 #include <set>
 #include <map>
-#include <cctype>
 
 using namespace std;
 
@@ -25,30 +24,17 @@ using namespace std;
 #define pb push_back
 #define mp make_pair
 
+typedef vector<int> vi;
 
 int main() {
-    string cad,cad2="";
-    cin>>cad;
-    bool change = true;
-    cad2+= islower(cad[0]) ? toupper(cad[0]):tolower(cad[0]);
-    Fori(i,1,cad.size()) {
-        if(isupper(cad[i])) {
-            cad2+=tolower(cad[i]);
-        }
-        else{
-            change=false;
-            break;
-        }
-    }
-    if(change) cout<<cad2<<endl;
-    else cout<<cad<<endl;
+    int k,l,m,n,d;
+    cin >>k>>l>>m>>n>>d;
+    vi vec(d+1,0);
+    for(int i = k; i<d+1; i+=k) vec[i] = 1;
+    for(int i = l; i<d+1; i+=l) vec[i] = 1;
+    for(int i = m; i<d+1; i+=m) vec[i] = 1;
+    for(int i = n; i<d+1; i+=n) vec[i] = 1;
+    
+    int num = count(vec.begin(),vec.end(),1);
+    cout<<num<<endl;
 }
-
-//int main() {
-//    string cad;
-//    cin>>cad;
-//    cad[0]=toupper(cad[0]);
-//    
-//    cout<<cad<<endl;
-//}
-

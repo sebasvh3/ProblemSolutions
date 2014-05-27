@@ -14,6 +14,8 @@
 #include <set>
 #include <map>
 #include <cctype>
+#include <functional>   
+#include <numeric>  
 
 using namespace std;
 
@@ -25,30 +27,11 @@ using namespace std;
 #define pb push_back
 #define mp make_pair
 
+typedef vector<int> vi;
 
 int main() {
-    string cad,cad2="";
+    string cad;
     cin>>cad;
-    bool change = true;
-    cad2+= islower(cad[0]) ? toupper(cad[0]):tolower(cad[0]);
-    Fori(i,1,cad.size()) {
-        if(isupper(cad[i])) {
-            cad2+=tolower(cad[i]);
-        }
-        else{
-            change=false;
-            break;
-        }
-    }
-    if(change) cout<<cad2<<endl;
-    else cout<<cad<<endl;
+    cad[0]=toupper(cad[0]);
+    cout<<cad<<endl;
 }
-
-//int main() {
-//    string cad;
-//    cin>>cad;
-//    cad[0]=toupper(cad[0]);
-//    
-//    cout<<cad<<endl;
-//}
-

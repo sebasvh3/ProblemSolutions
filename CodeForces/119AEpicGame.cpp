@@ -25,22 +25,46 @@ using namespace std;
 #define mp make_pair
 
 
-int main(){
-    int n;
-    int dangerous=1;
-    string players;
-    cin>>players;
-    bool danger=false;
-    For(i,players.size()-1){
-       if(players[i]==players[i+1]) dangerous++;
-       else dangerous = 1;
-       if (dangerous == 7){
-           danger=true;
-           break;
-       }
+int mcd(int x, int y) {
+    int may = x>y?x:y;
+    int men = x>y?y:x;
+    int res;
+    while(true) {
+        if(men==0) return may;
+        res = may%men;
+        if(res == 0){
+            return men;
+        }
+        else {
+            may = men;
+            men = res;
+        }
     }
-    if(danger){
-        cout<<"YES"<<endl;
+}
+
+int main() {
+    int a,b,n,m;
+    bool simon = true;
+    cin >>a>>b>>n;
+    while(true) {
+        if(simon){
+            m = mcd(a,n);
+            if(m>n){
+                cout<<"1"<<endl;
+                break;
+            }
+            n-=m;
+            simon = false;
+        }
+        else {
+            m = mcd(b,n);
+            if(m>n){
+                cout<<"0"<<endl;
+                break;
+            }
+            n-=m;
+            simon = true;
+        }
+        
     }
-    else cout<<"NO"<<endl;
 }
