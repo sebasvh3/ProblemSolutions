@@ -26,15 +26,13 @@ using namespace std;
 
 
 int main(){
-    int n,a,b;
-    cin >> n;
-    int may=0;
-    int acum=0;
-    while(n--){
-        cin>>a>>b;
-        acum+=b-a;
-        if(acum>may) may=acum;
+    int n;
+    int neigh=0;
+    string stones;
+    cin>>n>>stones;
+    
+    For(i,n-1){
+       if(stones[i]==stones[i+1]) neigh++; 
     }
-    cout<<may<<endl;
-    return 0;
+    cout<<neigh<<endl;
 }

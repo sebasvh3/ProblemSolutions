@@ -25,16 +25,17 @@ using namespace std;
 #define mp make_pair
 
 
-int main(){
-    int n,a,b;
-    cin >> n;
-    int may=0;
-    int acum=0;
-    while(n--){
-        cin>>a>>b;
-        acum+=b-a;
-        if(acum>may) may=acum;
-    }
-    cout<<may<<endl;
-    return 0;
+
+int main() {
+   string cad1,cad2;
+   cin>>cad1>>cad2;
+   int dif;
+   For(i,cad1.size()) {
+       dif = tolower(cad1[i]) - tolower(cad2[i]); 
+       if(dif != 0) break;
+   }
+   if(dif < 0) cout<<"-1"<<endl;
+   else if(dif > 0) cout<<"1"<<endl;
+   else if(dif == 0) cout<<"0"<<endl;
+   
 }

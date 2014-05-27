@@ -26,15 +26,21 @@ using namespace std;
 
 
 int main(){
-    int n,a,b;
-    cin >> n;
-    int may=0;
-    int acum=0;
-    while(n--){
-        cin>>a>>b;
-        acum+=b-a;
-        if(acum>may) may=acum;
+    int n;
+    int dangerous=1;
+    string players;
+    cin>>players;
+    bool danger=false;
+    For(i,players.size()-1){
+       if(players[i]==players[i+1]) dangerous++;
+       else dangerous = 1;
+       if (dangerous == 7){
+           danger=true;
+           break;
+       }
     }
-    cout<<may<<endl;
-    return 0;
+    if(danger){
+        cout<<"YES"<<endl;
+    }
+    else cout<<"NO"<<endl;
 }

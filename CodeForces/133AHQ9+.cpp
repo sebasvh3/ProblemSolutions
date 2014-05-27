@@ -25,16 +25,19 @@ using namespace std;
 #define mp make_pair
 
 
-int main(){
-    int n,a,b;
-    cin >> n;
-    int may=0;
-    int acum=0;
-    while(n--){
-        cin>>a>>b;
-        acum+=b-a;
-        if(acum>may) may=acum;
-    }
-    cout<<may<<endl;
-    return 0;
+
+int main() {
+   string cad;
+   cin >>cad;
+   bool out = false;
+   For(i,cad.size()) {
+       if (cad[i]=='H' or cad[i]=='Q' or cad[i]=='9'){
+           out=true;
+           break;
+       }
+   }
+   if(out) cout << "YES" << endl;
+   else cout << "NO" << endl;
+   
+   
 }

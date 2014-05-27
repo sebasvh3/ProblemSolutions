@@ -24,17 +24,29 @@ using namespace std;
 #define pb push_back
 #define mp make_pair
 
+typedef map<int,string> mis;
 
-int main(){
-    int n,a,b;
-    cin >> n;
-    int may=0;
-    int acum=0;
-    while(n--){
-        cin>>a>>b;
-        acum+=b-a;
-        if(acum>may) may=acum;
+
+int main() {
+    
+    mis name;
+    name[1]="Sheldon";
+    name[2]="Leonard";
+    name[3]="Penny";
+    name[4]="Rajesh";
+    name[5]="Howard";
+    
+    int n;
+    int dif,rep;
+    int bin = 0, acum=0;
+    cin>>n;
+    while(acum < n) {
+        rep = pow(2,bin);
+        dif = n-acum;
+        acum+= rep*5;
+        bin++;
     }
-    cout<<may<<endl;
-    return 0;
+    
+    int nName = ceil((double)dif/rep);
+    cout<<name[nName]<<endl;
 }
