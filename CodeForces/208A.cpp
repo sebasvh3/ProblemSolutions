@@ -32,20 +32,23 @@ using namespace std;
 int main() { IO;
     string cad1;
     cin >> cad1;
-    int pos=0,sig=0;
-    while(pos!= string::npos){
-        pos = cad1.find("WUB",pos);
-    }
+    //cad1="WUBWUBUNOWUBWUBDOSWUBWUBTRESWUBCUATROWUB";
+    int pos=0,sig=0,pent=0;
+    string word="";
+    pos = cad1.find("WUB");
     
-    cad1="uno hola mundo, como vamos ps hola si señor hola: ";
-    int n = cad1.find("WUB",29);
-    int n2 = cad1.find("hola",30);
-    int n3 = cad1.find("hola",31);
-    int n4 = cad1.find("hola",46);
-    cout << n<<endl;
-    cout << n2<<endl;
-    cout << n3<<endl;
-    cout << n4<<endl;
-    cout << cad1<<endl;
+    if(pos!=0){ word = cad1.substr(0,pos)+" ";}
+    while(pos!= string::npos){
+        sig = cad1.find("WUB",pos+1);
+        if((sig-pos) > 3){
+            word+=cad1.substr(pos+3,(sig-pos-3))+" ";
+        }
+        if(sig == string::npos){
+            word+=cad1.substr(pos+3,(cad1.size()-pos-3));
+        } 
+        pos = sig;
+    }        
+    cout<<word<<endl;
+     
 }
 
