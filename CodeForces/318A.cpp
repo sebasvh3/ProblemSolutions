@@ -12,8 +12,17 @@ using namespace std;
 #define pb push_back
 #define mp make_pair
 
+typedef long long int lint; 
 
 
 int main() { IO;
-    int n;
+    lint n,k;
+    cin>>n>>k;
+    lint impares = ceil((double)n/2);
+    if(k<=impares) {
+        cout<<2*k-1<<endl;
+    }
+    else {
+        cout<<2*(k-impares)<<endl;
+    }
 }

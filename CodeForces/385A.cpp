@@ -15,5 +15,18 @@ using namespace std;
 
 
 int main() { IO;
-    int n;
+    int n,c,first,second;
+    cin>>n>>c;
+    int mDif=0;
+    cin>>first;
+    Fori(i,1,n) {
+        cin>>second;
+        //D(mDif);D(first);D(second);l;
+        if(first-second > mDif) {
+            mDif = first-second;
+        }
+        first = second;
+    }
+    if (mDif-c < 0) cout<<"0";
+    else cout<<mDif-c;
 }

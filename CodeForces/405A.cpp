@@ -12,8 +12,19 @@ using namespace std;
 #define pb push_back
 #define mp make_pair
 
-
+typedef vector<int> vi;
 
 int main() { IO;
-    int n;
+    int n,x;
+    cin>>n;
+    vi nums;
+    while(n--) {
+        cin>>x;
+        nums.pb(x);
+    }
+    sort(nums.begin(),nums.end());
+    For(i,nums.size()) {
+        cout<<nums[i]<<" ";
+    }
+    //cout<<endl;
 }

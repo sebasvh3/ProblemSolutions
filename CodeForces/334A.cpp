@@ -16,4 +16,19 @@ using namespace std;
 
 int main() { IO;
     int n;
+    cin>>n;
+    
+    int cont = 1;
+    int cont2 = n*n;
+    For(i,n) {
+        For(i,n/2) {
+            cout <<cont<<" ";
+            cont++;
+        }
+        For(i,n/2) {
+            cout<< cont2<<" ";
+            cont2--;
+        }
+        cout<<endl;
+    }
 }

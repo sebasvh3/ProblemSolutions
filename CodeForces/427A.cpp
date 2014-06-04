@@ -15,5 +15,17 @@ using namespace std;
 
 
 int main() { IO;
-    int n;
+    int n,x,pols,crims;
+    cin>>n;
+    crims=0;
+    pols=0;
+    while(n--) {
+        cin>>x;
+        if(x==-1) {
+            if(pols>0) pols--;
+            else crims++;
+        }
+        else pols+=x;
+    }
+    cout<<crims<<endl;
 }
