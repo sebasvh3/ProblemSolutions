@@ -6,17 +6,20 @@ using namespace std;
 #define D(x) cout << #x << " : " << x << "  "
 #define l cout << endl
 
-#define For(i,a)    for(int i=0; i<a; i++)
+#define For(i,a) for(int i=0; i<a; i++)
 #define Fori(i,a,b) for(int i=a; i<b; i++)
+#define Forn(i,a,b,c) for(int i=a; i<b; i+=c)
 #define pb push_back
 #define mp make_pair
-#define all(x)  x.begin(),x.end()
-#define allr(x) x.rbegin(),x.rend()
-typedef vector<int> vi;
-typedef vector<pair<int,int> > vpii;
+
 
 
 int main() { IO;
-    int n;
-    
+    int n,alpha;
+    cin>>n;
+    while(n--) {
+        cin>>alpha;
+        if (360 % (180-alpha) == 0) cout<<"YES"<<endl;
+        else cout<<"NO"endl;
+    }
 }
