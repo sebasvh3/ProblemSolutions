@@ -14,10 +14,15 @@ using namespace std;
 #define allr(x) x.rbegin(),x.rend()
 typedef vector<int> vi;
 typedef vector<pair<int,int> > vpii;
-typedef long long int llint;
 
 
 int main() { IO;
-    int n;
-    
+    int n,k;
+    cin>>n>>k;
+    For(i,n) {
+        For(j,n) {
+            if(i==j) cout<<k<<" ";
+            else cout<<"0"<<" ";
+        } l;
+    }
 }
