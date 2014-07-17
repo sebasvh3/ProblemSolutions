@@ -21,6 +21,13 @@ typedef long long int llint;
 
 
 int main() { IO;
-    int n;
+    int n,x,y,sum=0,card;
+    cin>>n>>x;
+    For(i,n) {
+        cin>>y;
+        sum+=y;
+    }
     
+    card = sum%x==0 ? abs(sum/x) : abs(sum/x)+1; 
+    cout<<card<<endl;
 }
