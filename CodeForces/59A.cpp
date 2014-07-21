@@ -20,28 +20,19 @@ typedef vector<pii > vpii;
 typedef long long int llint;
 
 
-string imprimir(int n5, int n0) {
-    string cad5(n5*9,'5');
-    string cad0(n0,'0');
-    return cad5+cad0;
-}
-
 int main() { IO;
-    int n,x;
-    int n5=0,n0=0;
-    cin>>n;
-    For(i,n) {
-        cin>>x;
-        if(x==5) n5++;
-        else n0++;
+    string cad,cad2;
+    cin>>cad;
+    cad2=cad;
+    int tam = cad.size();
+    int mins = 0;
+    For(i, tam) {
+        int n = cad[i]-'a';
+        if(n>=0) mins++;
+        cad[i] =tolower(cad[i]);
+        cad2[i]=toupper(cad2[i]);
     }
+    if(mins >= (tam-mins)) cout<<cad<<endl;
+    else cout<<cad2<<endl;
     
-    if(n0==0) {
-        cout<<"-1"<<endl;
-    }
-    else {
-        if(n5>=9) cout<<imprimir(n5/9,n0)<<endl;
-        else cout<<"0"<<endl;
-    }
 }
-
