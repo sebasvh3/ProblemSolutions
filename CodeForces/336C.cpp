@@ -23,7 +23,10 @@ typedef long long int llint;
 int main() { IO;
     int n,m;
     n=4;m=4;
-    int o = 7 & 6;
+    int o = 13 & 11 & 9;
+    
+    //int a = 4;
     cout<< o <<endl;
+    //printf("%x\n",a);
     
 }
