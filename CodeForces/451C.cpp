@@ -20,32 +20,20 @@ typedef vector<pii > vpii;
 typedef long long int llint;
 
 
-bool isSolution() {
-}
-
-int main() { IO;in;
-    int t;
-    int n,k,d1,d2;
+bool isSolution(int n,int k,int d1,int d2) {
     int x1,x2,x3,n2,dif;
-    cin>>t;
-    while(t--) {
-        cin>>n>>k>>d1>>d2;
-        
-        x2 = (k-d1+d2)/3;
-        x1 = x2 +d1;
-        x3 = x2-d2;
-        
-        
-        
-        n2 = n/3;
-        dif = n-k;
-        
-        D(x1);
-        D(x2);
-        D(x3);
-        
-        
-        bool pos = true;
+    x2 = k+d1+d2;
+    x1 = x2+(-1)*d1;
+    x3 = x2+(-1)*d2;
+    
+    D(x1);
+    D(x2);
+    D(x3);l;l;
+    
+    
+    n2 = n/3;
+    dif = n-k;
+    bool pos = true;
         if(x1<=n2) {
             dif-=n2-x1;
             if(dif<0) pos = false;
@@ -61,9 +49,26 @@ int main() { IO;in;
             else pos = false;
         }
         else pos = false;
+    return pos;
+}
+
+int main() { IO;in;
+    int t;
+    int n,k,d1,d2;
+    cin>>t;
+    while(t--) {
+        cin>>n>>k>>d1>>d2;
         
-        if(pos) cout <<"yes"<<endl;
-        else cout <<"no"<<endl;
+        //x2 = (k-d1+d2)/3;
+        //x1 = x2 +d1;
+        //x3 = x2-d2;
+        
+        if(isSolution(n,k,-d1,-d2) || isSolution(n,k,-d1,d2) || isSolution(n,k,d1,d2) || isSolution(n,k,d1,-d2)) {
+            cout <<"yes"<<endl;
+        }
+        else {
+            cout <<"no"<<endl;
+        } 
     }
-    
+     
 }
