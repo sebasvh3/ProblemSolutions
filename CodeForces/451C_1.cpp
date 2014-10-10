@@ -28,15 +28,26 @@ bool isSolution(llint n,llint k,llint d1,llint d2) {
     
     n2 = n/3;
     dif = n-k;
+    
+//    D(n);D(k);D(d1);D(d2);l;
+//    D(x1);D(x2);D(x3);D(n2);D(dif);l;
+    
+    
     bool pos = true;
         if(x1<=n2 && x1>=0 && x2>=0 && x3>=0 and n%3 == 0) {
             dif-=n2-x1;
             if(dif<0) pos = false;
+//            cout<<"dif-->"<<dif;
+//            cout<<" val-->"<<n2-x1<<endl;
             if(x2<=n2) {
                 dif-=n2-x2;
+//            cout<<"dif-->"<<dif;
+//            cout<<" val-->"<<n2-x2<<endl;
                 if(dif<0) pos = false;
                 if(x3<=n2) {
                     dif-=n2-x3;
+//            cout<<"dif-->"<<dif;
+//            cout<<" val-->"<<n2-x3<<endl;
                     if(dif!=0) pos = false;
                 }
                 else pos = false;
@@ -44,15 +55,19 @@ bool isSolution(llint n,llint k,llint d1,llint d2) {
             else pos = false;
         }
         else pos = false;
+//    D(pos);l;l;
     return pos;
 }
 
-int main() { IO;
+int main() { IO;in;
     int t;
     llint n,k,d1,d2;
     cin>>t;
     while(t--) {
         cin>>n>>k>>d1>>d2;
+        
+        
+//        isSolution(n,k,d1,d2);
         
         if(isSolution(n,k,-d1,-d2) || isSolution(n,k,-d1,d2) || isSolution(n,k,d1,d2) || isSolution(n,k,d1,-d2)) {
             cout <<"yes"<<endl;
