@@ -1,3 +1,7 @@
+/**
+ * Problem: Calculating Function
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 #define IO ios_base::sync_with_stdio(false);cin.tie(NULL)
@@ -21,6 +25,10 @@ typedef long long int llint;
 
 
 int main() { IO;
-    int n;
+    llint n,a,b;
+    cin>>n;
     
+    a=n/2;
+    b=(n%2==0)?a:a+1;
+    cout<<a*a+a-b*b<<endl;
 }
