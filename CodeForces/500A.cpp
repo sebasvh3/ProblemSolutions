@@ -25,20 +25,27 @@ typedef long long int llint;
 
 
 int main() { IO;
-    int n,t,x;
-    int i=1,cell=1;
+    int n,t;
+    int cell=1,x=1,des=1;
     cin >> n >> t;
-    For(i,n-1) {
-        if (t == cell) {
-            cout<<"YES"<<endl;
-            return 0;
-        }
-        else if (cell>t) {
-            cout<<"NO"<<endl;
-            return 0;
-        }
+    bool newDes = true;
+    for(int i=1; i<n; i++) {
         cin >> x;
-        cell
-        
+        if(newDes) {
+            des = x+i;
+            //D(des);D(i);l;
+            if (t == des) {
+                cout<<"YES"<<endl;
+                return 0;
+            }
+            else if (des>t) {
+                cout<<"NO"<<endl;
+                return 0;
+            }
+            newDes = false;
+        }
+        if(i==des) newDes=true;
     }
+    cout<<"NO"<<endl;
+    return 0;
 }
