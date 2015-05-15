@@ -1,5 +1,6 @@
 /**
- * Problem: nameProblem
+ * Problem: New Year Transportation
+ * http://codeforces.com/
  */
 
 #include<bits/stdc++.h>
@@ -28,12 +29,13 @@ int main() { IO;
     int n,t;
     int cell=1,x=1,des=1;
     cin >> n >> t;
-    bool newDes = true;
+    bool newDes;// = true;
     for(int i=1; i<n; i++) {
         cin >> x;
+        if(i==des) newDes=true;
         if(newDes) {
             des = x+i;
-            //D(des);D(i);l;
+            //D(i);D(des);l;
             if (t == des) {
                 cout<<"YES"<<endl;
                 return 0;
@@ -44,7 +46,6 @@ int main() { IO;
             }
             newDes = false;
         }
-        if(i==des) newDes=true;
     }
     cout<<"NO"<<endl;
     return 0;
