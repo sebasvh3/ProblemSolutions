@@ -9,12 +9,12 @@ using namespace std;
 
 #define For(i, a) for (int i = 0; i < a; i++)
 
-int main() {
-
-    int d, stime, x, y;
+int main()
+{
+    int d, stime;
     cin >> d >> stime;
-    int minTime[d];
-    int maxTime[d];
+
+    int minTime[d], maxTime[d];
     int sumMin = 0, sumMax = 0;
     For(i, d) {
         cin >> minTime[i] >> maxTime[i];
@@ -27,14 +27,12 @@ int main() {
         int diff = stime - sumMin;
         For(i, d) {
             if (diff > 0) {
-                int incremento = maxTime[i] - minTime[i];
-                incremento = (diff - incremento) >= 0 ? incremento : diff;
-                diff -= incremento;
-                cout << (minTime[i] + incremento) << " ";
+                int increment = maxTime[i] - minTime[i];
+                increment = (diff - increment) >= 0 ? increment : diff;
+                minTime[i] += increment;
+                diff -= increment;
             }
-            else {
-                cout << minTime[i] << " ";
-            }
+            cout << minTime[i] << " ";
         }
     }
     else {
