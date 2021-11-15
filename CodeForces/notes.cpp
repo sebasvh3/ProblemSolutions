@@ -3,6 +3,11 @@
 //Microsoft Reference: https://docs.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=msvc-160
 //Geeks for Geeks reference: https://www.geeksforgeeks.org/c-plus-plus/?ref=ghm
 
+/** 
+\n\s*\{
+ {
+*/
+
 /**
  * Check static_cast (Problem 1196A.cpp)
  * https://docs.microsoft.com/en-us/cpp/cpp/static-cast-operator?view=msvc-160
@@ -10,7 +15,7 @@
  * Example cout << accumulate(v.begin(), v.end(), static_cast<long long int>(0)) / 2 << endl; 
 */
 
-
+// #include <bits/stdc++.h>
 #include <iostream>
 #include <cmath>
 #include <vector>
@@ -74,6 +79,35 @@ void rangeBasedForLoop()
     vector<int> v(n);
     for (auto &i : v)
         cin >> i;
+}
+
+void initializingVectorArrays()
+{
+    vector<int> v1;
+    v1 = {-1, -1};
+    v1[0] = 33;
+    v1[1] = 33;
+    v1.push_back(25);
+    v1 = {0};
+    for (int i : v1)
+        cout << i << " ";
+    L;
+
+    vector<int> v2{1, 2, 3, 4};
+    for (int i : v2)
+        cout << i << " ";
+    L;
+
+    int a1[] = {1, 2, 3, 4, 5, 6, 7};
+    vector<int> v3(a1, a1 + sizeof(a1) / sizeof(int));
+    for (int i : v3)
+        cout << i << " ";
+    L;
+
+    vector<int> v4(10, 7);
+    for (int i : v4)
+        cout << i << " ";
+    L;
 }
 
 void twoCounterInsideFor()
@@ -297,13 +331,16 @@ void solveSumProblem()
     }
 }
 
-//
+void testString() {
+    // show problem 527B_ErrorCorrectSystem.cpp
+}
 
 int main()
 {
-    //maps();
-    //vectors();
-    solveSumProblem();
+    // maps();
+    // vectors();
+    // solveSumProblem();
+    initializingVectorArrays();
 }
 
 void addele(int n, map<int, int> x)
