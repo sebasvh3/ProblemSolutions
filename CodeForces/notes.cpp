@@ -22,7 +22,7 @@
 #include <cstring>
 #include <algorithm>
 #include <set>
-#include <iomanip>
+#include <iomanip> // cout << setprecision(7) << fixed << sqrt(n) << " primes: ";
 #include <map>
 #include <cstdio>
 // #include <pair>
